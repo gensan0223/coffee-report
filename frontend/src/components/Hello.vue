@@ -1,11 +1,26 @@
 <script setup>
-const emit = defineEmits(['notification']);
-const sendNotification = () => {
-    emit('notification');
-}
+import { ref } from 'vue';
+const props = defineProps({
+    name: String,
+});
+
+const name = ref(props.name);
+
+const emit = defineEmits({
+    changeNameEvent: (name) => {
+        console.log(name);
+        if (name) return true;
+        return false;
+    },
+});
+
+const changeName = () => {
+    emit('changeNameEvent', name.value);
+};
 </script>
 
 <template>
     <h2>子コンポーネント</h2>
-    <button @click="sendNotification">通知</button>
+    <p>Hello {{ props.name }}</p>
+    <input type="text" v-model="name" @input="changeName" />
 </template>

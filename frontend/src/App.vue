@@ -1,13 +1,22 @@
 <script setup>
-import Hello from './components/Hello.vue';
-const handleEvent = () => {
-  console.log('子コンポーネントからの通知');
+import CompA from './components/CompA.vue';
+import { provide, ref } from 'vue';
+
+const count = ref(0);
+
+const addCount = () => {
+  count.value++;
 };
+
+provide('count', {
+  count,
+  addCount,
+});
 </script>
 
 <template>
   <h1>Vue 3 入門</h1>
-  <Hello v-on:notification="handleEvent" />
+  <CompA message="propsでデータ渡し" />
 </template>
 
 <style>
