@@ -1,9 +1,25 @@
 <script setup>
-import Default from './layouts/Default.vue'
+import Home from './layouts/Home.vue'
+
+let message = 'Hello World';
+const upperCase = () => {
+  message = message.toUpperCase();
+}
+
+upperCase();
+const link = 'https://google.com';
 </script>
 
 <template>
-  <Default>
+  <Home>
+    <a class="active">google</a>
     <router-view></router-view>
-  </Default>
+  </Home>
 </template>
+
+<style>
+  .active {
+    color: red;
+    font-weight: 900;
+  }
+</style>

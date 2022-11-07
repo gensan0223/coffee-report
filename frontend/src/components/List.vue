@@ -25,11 +25,6 @@ const lists = reactive([
             },
         ],
     },
-    {
-        name: 'ダッシュボード',
-        icon: 'TemplateIcon',
-        link: '/',
-    },
 ]);
 
 const icons = {

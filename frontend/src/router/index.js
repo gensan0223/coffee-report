@@ -1,29 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Dashboard from '../pages/Dashboard.vue';
+import Home from '../pages/Home.vue';
+import Search from '../pages/Search.vue';
+import Add from '../pages/Order.vue';
+import Notification from '../pages/Notification.vue';
 import Profile from '../pages/Profile.vue';
-import Order from '../pages/Order.vue';
-import Product from '../pages/Product.vue';
 
 const routes = [
     {
-        path: '/',
-        name: 'Dashboard',
-        component: Dashboard,
+        path: '/home',
+        name: 'Home',
+        component: Home,
+    },
+    {
+        path: '/search',
+        name: 'Search',
+        component: Search,
+    },
+    {
+        path: '/add',
+        name: 'Add',
+        component: Add,
+    },
+    {
+        path: '/notification',
+        name: 'Notification',
+        component: Notification,
     },
     {
         path: '/profile',
         name: 'Profile',
         component: Profile,
-    },
-    {
-        path: '/order',
-        name: 'Order',
-        component: Order,
-    },
-    {
-        path: '/product',
-        name: 'Product',
-        component: Product,
     },
 ];
 
