@@ -13,7 +13,9 @@ const Product = {
 }
 </script>
 <template>
-    <div>商品一覧</div>
-    <ul>
-    </ul>
+    <div class="pt-12">
+        <div>商品一覧</div>
+        <ul>
+        </ul>
+    </div>
 </template>

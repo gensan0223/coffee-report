@@ -1,9 +1,9 @@
 <script setup>
-    import Menu from '../components/Menu.vue'
+    import BottomNavigation from '../components/BottomNavigation.vue'
     import Header from '../components/Header.vue'
 </script>
 <template>
     <Header />
-    <Menu />
+    <BottomNavigation />
     <slot />
 </template>

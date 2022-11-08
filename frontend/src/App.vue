@@ -1,19 +1,11 @@
 <script setup>
 import Home from './layouts/Home.vue'
 
-let message = 'Hello World';
-const upperCase = () => {
-  message = message.toUpperCase();
-}
-
-upperCase();
-const link = 'https://google.com';
 </script>
 
 <template>
   <Home>
-    <a class="active">google</a>
-    <router-view></router-view>
+    <router-view />
   </Home>
 </template>
 
