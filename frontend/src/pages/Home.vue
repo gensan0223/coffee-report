@@ -2,13 +2,19 @@
 import axios from 'axios';
 import { ref, reactive,onMounted } from 'vue';
 
-const users = ref([]);
 
 const Product = {
     setup() {
+        const users = ref([]);
         onMounted(() => {
-            console.log(users);
+            axios.get('/api/posts')
+                .then(resposne => (users.value = response.data))
+                .catch(error => console.log(error))
+            ;
         })
+        return {
+            users,
+        };
     }
 }
 </script>
@@ -16,6 +22,7 @@ const Product = {
     <div class="pt-12">
         <div>商品一覧</div>
         <ul>
+            <li v-for="user in users">{{ user.name }}</li>
         </ul>
     </div>
 </template>

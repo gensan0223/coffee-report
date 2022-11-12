@@ -18,4 +18,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/hello', 'HelloController@index');
+Route::get('/helloWorld', function() {
+    return response()->json(['Hello'=>'World']);
+});
+
+Route::get('/posts', function() {
+    return App\Models\User::all();
+});
