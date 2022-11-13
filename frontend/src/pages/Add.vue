@@ -1,6 +1,7 @@
 <script setup>
 import Btn from '../components/Btn.vue'
 import TextArea from '../components/TextArea.vue'
+import PostRangeGroup from '../components/home/PostRangeGroup.vue'
 import axios from 'axios';
 
 const createPost = () => {
@@ -29,6 +30,9 @@ const createPost = () => {
     <div class="">username</div>
    <div class="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
     <TextArea ></TextArea>
+    <div>
+        <PostRangeGroup></PostRangeGroup>
+    </div>
        <div class="flex justify-between items-center py-2 px-3 border-b dark:border-gray-600">
            <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x dark:divide-gray-600">
                <div class="flex items-center space-x-1 sm:pr-4">
@@ -82,7 +86,9 @@ const createPost = () => {
            </div>
        </div>
    </div>
-   <Btn>Publish post</Btn>
+   <div class="pl-3">
+        <Btn>Publish post</Btn>
+   </div>
 </form>
 
 </template>

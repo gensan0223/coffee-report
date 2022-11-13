@@ -5,7 +5,7 @@ import PostCard from '../components/home/PostCard.vue';
 
 const posts = ref([]);
 onMounted(() => {
-    axios.get('http://localhost:3001/posts')
+    axios.get('http://localhost/api/posts')
         .then((response) => {
             posts.value = response.data;
         })

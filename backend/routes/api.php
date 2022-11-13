@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +26,5 @@ Route::get('/helloWorld', function() {
 Route::get('/users', function() {
     return App\Models\User::all();
 });
-Route::get('/posts', function() {
-    return App\Models\Post::with(['user'])->get();
-});
-Route::post('/posts', function() {
-    return App\Models\Post::with(['user'])->get();
-});
+
+Route::apiResource('/posts', PostController::class)->only('index', 'store');

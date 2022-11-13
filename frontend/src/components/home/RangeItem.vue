@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
     post: {
-        default: 'test',
+        default: 0,
     },
 })
 </script>
@@ -15,7 +15,6 @@ defineProps({
 </template>
 <style scoped lang="scss">
     @media screen and (-webkit-min-device-pixel-ratio: 0) {
-     
         input[type="range"]::-webkit-slider-thumb {
             width: 15px;
             -webkit-appearance: none;
@@ -24,7 +23,6 @@ defineProps({
             cursor: ew-resize;
             background: #9a3412;
             border-radius: 50%;
-            
         }
     }
 </style>
