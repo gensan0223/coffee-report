@@ -4,7 +4,7 @@ import PostText from './PostText.vue';
 import PostRangeGroup from './PostRangeGroup.vue';
 defineProps({
     post: {
-        default: 'test',
+        default: 0,
     },
 })
 </script>
