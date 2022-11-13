@@ -22,6 +22,12 @@ Route::get('/helloWorld', function() {
     return response()->json(['Hello'=>'World']);
 });
 
-Route::get('/posts', function() {
+Route::get('/users', function() {
     return App\Models\User::all();
+});
+Route::get('/posts', function() {
+    return App\Models\Post::with(['user'])->get();
+});
+Route::post('/posts', function() {
+    return App\Models\Post::with(['user'])->get();
 });

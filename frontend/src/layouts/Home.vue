@@ -5,5 +5,7 @@
 <template>
     <Header />
     <BottomNavigation />
-    <slot />
+    <div class="pt-12">
+        <slot />
+    </div>
 </template>

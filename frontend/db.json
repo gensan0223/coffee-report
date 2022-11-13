@@ -1,0 +1,62 @@
+{
+  "posts": [
+    {
+        "id": 1,
+        "user_id": 1,
+        "text": "test",
+        "range1": 30,
+        "range2": 0,
+        "range3": 0,
+        "range4": 0,
+        "favorite_count": 0,
+        "flavor": "test",
+        "user":
+          {
+            "id": 1,
+            "name": "some comment",
+            "email": "margaret94@example.org"
+          }
+    },
+    {
+        "id": 2,
+        "user_id": 2,
+        "text": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
+        "range1": 30,
+        "range2": 10,
+        "range3": 20,
+        "range4": 80,
+        "favorite_count": 0,
+        "flavor": "test",
+        "user":
+          {
+            "id": 2,
+            "name": "Sam",
+            "email": "margaret94@example.org"
+          }
+    },
+    {
+        "id": 3,
+        "user_id": 2,
+        "text": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
+        "range1": 30,
+        "range2": 10,
+        "range3": 20,
+        "range4": 80,
+        "favorite_count": 0,
+        "flavor": "test",
+        "user":
+          {
+            "id": 2,
+            "name": "Sam",
+            "email": "margaret94@example.org"
+          }
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "some comment",
+      "email": "margaret94@example.org"
+    }
+  ]
+}

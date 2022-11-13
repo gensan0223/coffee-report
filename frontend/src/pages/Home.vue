@@ -1,28 +1,22 @@
-<script>
+<script setup>
 import axios from 'axios';
-import { ref, reactive,onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
+import PostCard from '../components/home/PostCard.vue';
 
-
-const Product = {
-    setup() {
-        const users = ref([]);
-        onMounted(() => {
-            axios.get('/api/posts')
-                .then(resposne => (users.value = response.data))
-                .catch(error => console.log(error))
-            ;
+const posts = ref([]);
+onMounted(() => {
+    axios.get('http://localhost:3001/posts')
+        .then((response) => {
+            posts.value = response.data;
         })
-        return {
-            users,
-        };
-    }
-}
+        .catch(error => console.log(error))
+    ;
+});
 </script>
 <template>
-    <div class="pt-12">
-        <div>商品一覧</div>
-        <ul>
-            <li v-for="user in users">{{ user.name }}</li>
-        </ul>
-    </div>
+    <ul>
+        <li v-for="post in posts">
+            <PostCard :post="post" />
+        </li>
+    </ul>
 </template>

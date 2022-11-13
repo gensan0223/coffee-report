@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../pages/Home.vue';
 import Search from '../pages/Search.vue';
-import Add from '../pages/Order.vue';
+import Add from '../pages/Add.vue';
 import Notification from '../pages/Notification.vue';
 import Profile from '../pages/Profile.vue';
 
