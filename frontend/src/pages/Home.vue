@@ -1,21 +1,33 @@
 <script setup>
-import axios from 'axios';
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
+import { usePostRanges } from '../stores/postRanges';
 import PostCard from '../components/home/PostCard.vue';
 
-const posts = ref([]);
+const { posts } = storeToRefs(usePostRanges());
+const { getPosts } = usePostRanges();
+
 onMounted(() => {
-    axios.get('http://localhost/api/posts')
-        .then((response) => {
-            posts.value = response.data;
-        })
-        .catch(error => console.log(error))
-    ;
+    getPosts();
 });
+defineProps({
+    post: {
+        default: {
+            range1: 0,
+            range2: 0,
+            range3: 0,
+            range4: 0,
+            text: '',
+            user: {
+                name: '',
+            }
+        },
+    },
+})
 </script>
 <template>
     <ul>
-        <li v-for="post in posts">
+        <li v-for="post in posts" :key="post.id">
             <PostCard :post="post" />
         </li>
     </ul>
