@@ -4,8 +4,14 @@ import Search from '../pages/Search.vue';
 import Add from '../pages/Add.vue';
 import Notification from '../pages/Notification.vue';
 import Profile from '../pages/Profile.vue';
+import Login from '../pages/Login.vue';
 
 const routes = [
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login,
+    },
     {
         path: '/home',
         name: 'Home',
