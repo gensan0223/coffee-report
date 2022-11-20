@@ -18,6 +18,13 @@ final class LogoutControllerTest extends TestCase
     {
         $user = User::factory()->create(['email' => 'test@example.com']);
 
+        $params = [
+            'email' => 'test@example.com',
+            'password' => 'password',
+        ];
+
+        $this->postJson('/login', $params);
+
         $this->actingAs($user)
             ->postJson('/logout')
             ->assertStatus(200)
