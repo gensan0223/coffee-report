@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Api\MeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::get('/me', MeController::class);
 });
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     Route::get('/me', MeController::class);
+//     // return $request->user();
+// });
 
 Route::get('/helloWorld', function() {
     return response()->json(['Hello'=>'World']);
