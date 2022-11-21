@@ -1,10 +1,5 @@
 <script setup>
 import { UserCircleIcon } from '@heroicons/vue/solid'
-defineProps({
-    post: {
-        default: 'test',
-    },
-})
 const icons = {
     UserCircleIcon: UserCircleIcon,
 }

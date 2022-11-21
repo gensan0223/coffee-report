@@ -1,7 +1,14 @@
 <script setup>
 import Btn from '../components/Btn.vue'
 import TextArea from '../components/TextArea.vue'
+import PostRangeGroup from '../components/home/PostRangeGroup.vue'
 import axios from 'axios';
+import { usePostRanges } from '../stores/postRanges';
+import { storeToRefs } from 'pinia'
+
+const ranges = usePostRanges();
+const { range1, range2, range3, range4, doubleCount } = storeToRefs(ranges);
+const { increment } = ranges;
 
 const createPost = () => {
     axios.post('http://localhost:3001/posts', {
@@ -26,9 +33,15 @@ const createPost = () => {
 <template>
 
 <form>
+    <div>{{ range1 }}</div>
+    <div>{{ doubleCount }}</div>
+    <button @click="increment">up</button>
     <div class="">username</div>
    <div class="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
     <TextArea ></TextArea>
+    <div>
+        <PostRangeGroup></PostRangeGroup>
+    </div>
        <div class="flex justify-between items-center py-2 px-3 border-b dark:border-gray-600">
            <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x dark:divide-gray-600">
                <div class="flex items-center space-x-1 sm:pr-4">
@@ -82,7 +95,9 @@ const createPost = () => {
            </div>
        </div>
    </div>
-   <Btn>Publish post</Btn>
+   <div class="pl-3">
+        <Btn>Publish post</Btn>
+   </div>
 </form>
 
 </template>

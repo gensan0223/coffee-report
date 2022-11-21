@@ -1,7 +1,23 @@
 <script setup>
+// import { usePostRanges } from '../stores/postRanges';
+// const { posts } = storeToRefs(usePostRanges());
+// const { getPosts } = usePostRanges();
+
+// onMounted(() => {
+//     getPosts();
+// });
 defineProps({
     post: {
-        default: 'test',
+        default: {
+            range1: 0,
+            range2: 0,
+            range3: 0,
+            range4: 0,
+            text: '',
+            user: {
+                name: '',
+            }
+        },
     },
 })
 </script>
@@ -15,7 +31,6 @@ defineProps({
 </template>
 <style scoped lang="scss">
     @media screen and (-webkit-min-device-pixel-ratio: 0) {
-     
         input[type="range"]::-webkit-slider-thumb {
             width: 15px;
             -webkit-appearance: none;
@@ -24,7 +39,6 @@ defineProps({
             cursor: ew-resize;
             background: #9a3412;
             border-radius: 50%;
-            
         }
     }
 </style>
